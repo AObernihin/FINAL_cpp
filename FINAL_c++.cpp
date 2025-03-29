@@ -206,7 +206,7 @@ struct Product {
 	bool SaveProductToFile(const Product& product, const string& filename) {
 		try {
 
-			filesystem::create_directories(filesystem::path(filename).parent_path());
+			/*filesystem::create_directories(filesystem::path(filename).parent_path());*/
 
 
 			ofstream file(filename, ios::app);
@@ -856,8 +856,8 @@ public:
 		wcout << "6 - search employee" << endl;
 		wcout << "7 - convert hours to salary" << endl;
 		wcout << "8 - print receipt" << endl;
-		/*wcout << "9 - save Products to file" << endl;
-		wcout << "10 - load products from file" << endl;*/
+		wcout << "9 - save Products to file" << endl;
+		wcout << "10 - load products from file" << endl;
 		wcout << "0 - exit" << endl;
 		wcout << "************************" << endl;
 		cin >> action;
@@ -920,9 +920,9 @@ public:
 		wcout << "13 - Print receipt" << endl;
 		wcout << "14 - add work hours to employee" << endl;
 		wcout << "15 - convert hours to salary" << endl;
-		/*wcout << "16 - save Products to file" << endl;*/
-		/*wcout << "17 - load Products from file" << endl;*/
-		/*wcout << "18 - delete product from file" << endl;*/
+		wcout << "16 - save Products to file" << endl;
+		wcout << "17 - load Products from file" << endl;
+		wcout << "18 - delete product from file" << endl;
 		wcout << "0 - exit" << endl;
 		wcout << "************************" << endl;
 		cin >> action;
@@ -985,7 +985,7 @@ public:
 			LoadProductsFromFile();
 			break;
 		case 18:
-			cout << "Enter ID: ";
+			wcout << "Enter ID: ";
 			int id;
 			cin >> id;
 			DeleteProductFromStorage(id);
